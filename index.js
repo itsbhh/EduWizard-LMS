@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use(cors({
     origin: ["https://eduwizard.netlify.app", "http://localhost:5173"],
     credentials: true,  // ✅ Allows cookies to be sent
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: ["GET", "POST", "PUT", "DELETE" ,"PATCH","OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
