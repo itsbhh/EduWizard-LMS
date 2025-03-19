@@ -62,8 +62,8 @@ export const createCheckoutSession = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: `http://localhost:5173/course-progress/${courseId}`, 
-      cancel_url: `http://localhost:5173/course-detail/${courseId}`,
+      success_url: `https://eduwizard.netlify.app/course-progress/${courseId}`, 
+      cancel_url: `https://eduwizard.netlify.app/course-detail/${courseId}`,
       metadata: {
         courseId: courseId,
         userId: userId,
