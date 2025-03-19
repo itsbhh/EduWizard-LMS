@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-    origin:"https://eduwizard.netlify.app",
+    origin:["https://eduwizard.netlify.app", "http://localhost:5173"],
     credentials:true
 }));
  
