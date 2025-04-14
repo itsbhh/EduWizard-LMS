@@ -14,20 +14,16 @@ EduWizard is a powerful and user-friendly **E-commerce Learning Management Syste
 ### For Instructors
 - Create and manage courses with videos, PDFs, and quizzes
 - Set course prices and manage student enrollments
-- Engage with students via discussion forums
-- Track course performance and student progress
 - Secure payments through Stripe
 
 ### For Students
 - Browse and enroll in a variety of courses
 - Access learning materials anytime, anywhere
-- Engage in discussions with instructors and fellow students
-- Track progress through the course dashboard
 - Secure checkout with Stripe for purchasing courses
 
 ## Roles & Permissions
-- **Instructor**: Can create, manage, and sell courses, as well as interact with students
-- **Student**: Can enroll in courses, access course materials, and participate in discussions
+- **Instructor**: Can create, manage, and sell courses.
+- **Student**: Can enroll in courses and access course materials.
 
 ## Limitations
 - EduWizard is **not government-registered**
@@ -44,7 +40,6 @@ EduWizard is a powerful and user-friendly **E-commerce Learning Management Syste
 - **Title**: Name of the course
 - **Description**: Brief summary of what the course covers
 - **Price**: Set by the instructor
-- **Content**: Videos, PDFs, quizzes, and additional resources
 - **Instructor**: Name of the course creator
 - **Student Enrollment**: Number of students enrolled
 
