@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     role:{
         type:String,
         enum:["instructor", "student"],
-        required: true // Now it's mandatory to select a role
+        required: true
     },
     enrolledCourses:[
         {
