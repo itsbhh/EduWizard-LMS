@@ -1,4 +1,4 @@
-import { Menu, School } from "lucide-react";
+import { Menu } from "lucide-react";
 import React, { useEffect } from "react";
 import {
   DropdownMenu,
@@ -49,15 +49,31 @@ const Navbar = () => {
       {/* Desktop */}
       <div className="max-w-7xl mx-auto hidden md:flex justify-between items-center gap-10 h-full">
         <div className="flex items-center gap-2">
-        <img src={Logo} alt="EduWizard Logo" className="h-12 w-auto" /> 
+          <img src={Logo} alt="EduWizard Logo" className="h-12 w-auto" />
           <Link to="/">
             <h1 className="hidden md:block font-extrabold text-2xl">
               EduWizard
             </h1>
           </Link>
         </div>
-        {/* User icons and dark mode icon */}
-        <div className="flex items-center gap-8">
+        {/* Action Buttons & User */}
+        <div className="flex items-center gap-4">
+          {/* Desktop Avia AI Button */}
+          <Link to="https://avia-ai.netlify.app" target="_blank">
+            <Button
+              className="hidden md:inline-flex items-center gap-2 
+               bg-black text-white 
+               dark:bg-white dark:text-black
+               rounded-xl px-4 py-2
+               hover:bg-white hover:text-black
+               dark:hover:bg-black dark:hover:text-white
+               transition-all duration-300"
+            >
+              Avia AI
+            </Button>
+          </Link>
+
+          {/* Existing Avia/EduWizard buttons & User */}
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -104,10 +120,28 @@ const Navbar = () => {
           <DarkMode />
         </div>
       </div>
-      {/* Mobile device */}
+
+      {/* Mobile */}
       <div className="flex md:hidden items-center justify-between px-4 h-full">
         <h1 className="font-extrabold text-2xl">EduWizard</h1>
-        <MobileNavbar user={user} logoutHandler={logoutHandler} />
+        <div className="flex items-center gap-2">
+          {/* Mobile Avia AI Button */}
+          <Link to="https://avia-ai.netlify.app" target="_blank">
+            <Button
+              size="icon"
+              className="rounded-full p-2 
+               bg-black text-white 
+               dark:bg-white dark:text-black
+               hover:bg-white hover:text-black
+               dark:hover:bg-black dark:hover:text-white
+               transition-all duration-300"
+            >
+              A
+            </Button>
+          </Link>
+
+          <MobileNavbar user={user} logoutHandler={logoutHandler} />
+        </div>
       </div>
     </div>
   );
@@ -147,7 +181,10 @@ const MobileNavbar = ({ user, logoutHandler }) => {
         {user?.role === "instructor" && (
           <SheetFooter>
             <SheetClose asChild>
-              <Button type="submit" onClick={() => navigate("/admin/dashboard")}>
+              <Button
+                type="submit"
+                onClick={() => navigate("/admin/dashboard")}
+              >
                 Dashboard
               </Button>
             </SheetClose>
