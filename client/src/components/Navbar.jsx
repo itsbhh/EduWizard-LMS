@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Action Buttons & User */}
         <div className="flex items-center gap-4">
           {/* Desktop Avia AI Button */}
-          <Link to="https://avia-ai.netlify.app" target="_blank">
+          <Link to="https://avia-ai.vercel.app/" target="_blank">
             <Button
               className="hidden md:inline-flex items-center gap-2 
                bg-black text-white 
@@ -126,7 +126,7 @@ const Navbar = () => {
         <h1 className="font-extrabold text-2xl">EduWizard</h1>
         <div className="flex items-center gap-2">
           {/* Mobile Avia AI Button */}
-          <Link to="https://avia-ai.netlify.app" target="_blank">
+          <Link to="https://avia-ai.vercel.app/" target="_blank">
             <Button
               size="icon"
               className="rounded-full p-2 
