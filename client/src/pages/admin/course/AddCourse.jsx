@@ -71,6 +71,9 @@ const AddCourse = () => {
             <SelectContent>
               <SelectGroup>
                 <SelectLabel>Category</SelectLabel>
+                <SelectItem value="Computer Graphics">Computer Graphics</SelectItem>
+                <SelectItem value="Electrical Engineering Courses">Electrical Engineering Courses</SelectItem>
+                <SelectItem value="Core Computer Courses">Core Computer Courses</SelectItem>
                 <SelectItem value="Next JS">Next JS</SelectItem>
                 <SelectItem value="Data Science">Data Science</SelectItem>
                 <SelectItem value="Frontend Development">
