@@ -13,6 +13,9 @@ import { Separator } from "@/components/ui/separator";
 import React, { useState } from "react";
 
 const categories = [
+   { id: "core computer courses", label: "Core Computer Courses" },
+  { id: "electrical engineering courses", label: "Electrical Engineering Courses" },
+  { id: "computer graphics", label: "Computer Graphics" },
   { id: "nextjs", label: "Next JS" },
   { id: "data science", label: "Data Science" },
   { id: "frontend development", label: "Frontend Development" },
@@ -24,6 +27,7 @@ const categories = [
   { id: "docker", label: "Docker" },
   { id: "mongodb", label: "MongoDB" },
   { id: "html", label: "HTML" },
+ 
 ];
 
 const Filter = ({ handleFilterChange }) => {
