@@ -89,7 +89,7 @@ const appRouter = createBrowserRouter([
         ),
       },
 
-      // admin routes start from here
+      // admin routes 
       {
         path: "admin",
         element: (
