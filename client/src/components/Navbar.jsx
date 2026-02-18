@@ -46,7 +46,6 @@ const Navbar = () => {
 
   return (
     <div className="h-16 dark:bg-[#020817] bg-white border-b dark:border-b-gray-800 border-b-gray-200 fixed top-0 left-0 right-0 duration-300 z-10">
-      {/* Desktop */}
       <div className="max-w-7xl mx-auto hidden md:flex justify-between items-center gap-10 h-full">
         <div className="flex items-center gap-2">
           <img src={Logo} alt="EduWizard Logo" className="h-12 w-auto" />
@@ -56,9 +55,22 @@ const Navbar = () => {
             </h1>
           </Link>
         </div>
-        {/* Action Buttons & User */}
+
         <div className="flex items-center gap-4">
-          {/* Desktop Avia AI Button */}
+          <Link to="https://jobhub12.netlify.app/" target="_blank">
+            <Button
+              className="hidden md:inline-flex items-center gap-2 
+               bg-black text-white 
+               dark:bg-white dark:text-black
+               rounded-xl px-4 py-2
+               hover:bg-white hover:text-black
+               dark:hover:bg-black dark:hover:text-white
+               transition-all duration-300"
+            >
+              JobHub
+            </Button>
+          </Link>
+
           <Link to="https://avia-ai.vercel.app/" target="_blank">
             <Button
               className="hidden md:inline-flex items-center gap-2 
@@ -73,7 +85,6 @@ const Navbar = () => {
             </Button>
           </Link>
 
-          {/* Existing Avia/EduWizard buttons & User */}
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -121,11 +132,23 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile */}
       <div className="flex md:hidden items-center justify-between px-4 h-full">
         <h1 className="font-extrabold text-2xl">EduWizard</h1>
         <div className="flex items-center gap-2">
-          {/* Mobile Avia AI Button */}
+          <Link to="https://jobhub12.netlify.app/" target="_blank">
+            <Button
+              size="icon"
+              className="rounded-full p-2 
+               bg-black text-white 
+               dark:bg-white dark:text-black
+               hover:bg-white hover:text-black
+               dark:hover:bg-black dark:hover:text-white
+               transition-all duration-300"
+            >
+              J
+            </Button>
+          </Link>
+
           <Link to="https://avia-ai.vercel.app/" target="_blank">
             <Button
               size="icon"
