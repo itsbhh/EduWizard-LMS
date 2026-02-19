@@ -7,7 +7,7 @@ export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
     baseUrl: USER_API,
-    credentials: "include", // 🔥 Ensures cookies are sent with all requests
+    credentials: "include", 
   }),
   endpoints: (builder) => ({
     registerUser: builder.mutation({
