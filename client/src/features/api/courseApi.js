@@ -9,7 +9,7 @@ export const courseApi = createApi({
     baseUrl: COURSE_API,
     credentials: "include",
     prepareHeaders: (headers) => {
-      const token = localStorage.getItem("token");  // Ensure the token is retrieved
+      const token = localStorage.getItem("token");  
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
