@@ -8,7 +8,7 @@ export const courseProgressApi = createApi({
     baseUrl: COURSE_PROGRESS_API,
     credentials: "include",
     prepareHeaders: (headers) => {
-      const token = localStorage.getItem("token");  // Retrieve token
+      const token = localStorage.getItem("token");  
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
