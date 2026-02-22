@@ -33,7 +33,6 @@ const AddCourse = () => {
     await createCourse({ courseTitle, category });
   };
 
-  // for displaying toast
   useEffect(()=>{
     if(isSuccess){
         toast.success(data?.message || "Course created.");
