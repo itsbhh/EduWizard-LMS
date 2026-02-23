@@ -81,7 +81,7 @@ const CourseTab = () => {
   const selectCourseLevel = (value) => {
     setInput({ ...input, courseLevel: value });
   };
-  // get file
+  
   const selectThumbnail = (e) => {
     const file = e.target.files?.[0];
     if (file) {
