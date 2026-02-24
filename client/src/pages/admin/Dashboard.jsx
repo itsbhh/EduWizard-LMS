@@ -10,7 +10,7 @@ const Dashboard = () => {
   if(isLoading) return <h1>Loading...</h1>
   if(isError) return <h1 className="text-red-500">Failed to get purchased course</h1>
 
-  //
+  
   const {purchasedCourse} = data || [];
 
   const courseData = purchasedCourse.map((course)=> ({
@@ -55,18 +55,18 @@ const Dashboard = () => {
               <XAxis
                 dataKey="name"
                 stroke="#6b7280"
-                angle={-30} // Rotated labels for better visibility
+                angle={-30} 
                 textAnchor="end"
-                interval={0} // Display all labels
+                interval={0} 
               />
               <YAxis stroke="#6b7280" />
               <Tooltip formatter={(value, name) => [`₹${value}`, name]} />
               <Line
                 type="monotone"
                 dataKey="price"
-                stroke="#4a90e2" // Changed color to a different shade of blue
+                stroke="#4a90e2" 
                 strokeWidth={3}
-                dot={{ stroke: "#4a90e2", strokeWidth: 2 }} // Same color for the dot
+                dot={{ stroke: "#4a90e2", strokeWidth: 2 }} 
               />
             </LineChart>
           </ResponsiveContainer>
