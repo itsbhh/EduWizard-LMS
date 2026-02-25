@@ -24,7 +24,7 @@ const Login = () => {
     name: "",
     email: "",
     password: "",
-    role: "", // Added role field
+    role: "", 
   });
   const [loginInput, setLoginInput] = useState({ email: "", password: "" });
 
@@ -55,7 +55,7 @@ const Login = () => {
     
     await action(inputData);
   
-    // Clear the input fields after successful submission
+
     if (type === "signup") {
       setSignupInput({ name: "", email: "", password: "", role: "" });
     } else {
@@ -145,7 +145,7 @@ const Login = () => {
                 />
               </div>
 
-              {/* Role Selection - Added Radio Buttons */}
+             
               <div className="space-y-1">
                 <Label>Select Role</Label>
                 <div className="flex space-x-4">
