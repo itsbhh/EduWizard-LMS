@@ -51,30 +51,25 @@ const CourseProgress = () => {
   const { courseDetails, progress, completed } = data.data;
   const { courseTitle, lectures } = courseDetails || {};
 
-  // Debugging API response
+
   console.log("Course Progress Data:", data);
 
-  // Select first lecture if none selected
   const initialLecture = currentLecture || (lectures?.length > 0 ? lectures[0] : null);
 
-  // Check if a lecture is completed
   const isLectureCompleted = (lectureId) => {
     return progress?.some((prog) => prog.lectureId === lectureId && prog.viewed);
   };
 
-  // Update progress when playing video
   const handleLectureProgress = async (lectureId) => {
     await updateLectureProgress({ courseId, lectureId });
     refetch();
   };
 
-  // Select lecture from the list
   const handleSelectLecture = (lecture) => {
     setCurrentLecture(lecture);
     handleLectureProgress(lecture._id);
   };
 
-  // Complete or Incomplete Course
   const handleCompleteCourse = async () => await completeCourse(courseId);
   const handleInCompleteCourse = async () => await inCompleteCourse(courseId);
 
@@ -145,7 +140,7 @@ const CourseProgress = () => {
         </div>
       </div>
 
-      {/* Congratulations Dialog */}
+     
       {/* Congratulations Dialog */}
 <Dialog open={showCongratsDialog} onOpenChange={setShowCongratsDialog}>
   <DialogContent className="max-w-md text-center p-6" aria-describedby="congrats-dialog-description">
