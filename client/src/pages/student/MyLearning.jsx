@@ -5,7 +5,7 @@ import { useLoadUserQuery } from "@/features/api/authApi";
 const MyLearning = () => { 
   const { data, isLoading } = useLoadUserQuery();
 
-console.log("User Data:", data); // Debug API response
+console.log("User Data:", data); 
 
 
   const myLearning = data?.user.enrolledCourses || [];
@@ -31,7 +31,6 @@ console.log("User Data:", data); // Debug API response
 
 export default MyLearning;
 
-// Skeleton component for loading state
 const MyLearningSkeleton = () => (
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
     {[...Array(3)].map((_, index) => (
