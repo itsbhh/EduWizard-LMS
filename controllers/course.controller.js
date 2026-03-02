@@ -35,7 +35,6 @@ export const searchCourse = async (req,res) => {
         const {query = "", categories = [], sortByPrice =""} = req.query;
         console.log(categories);
         
-        // create search query
         const searchCriteria = {
             isPublished:true,
             $or:[
@@ -45,17 +44,15 @@ export const searchCourse = async (req,res) => {
             ]
         }
 
-        // if categories selected
         if(categories.length > 0) {
             searchCriteria.category = {$in: categories};
         }
 
-        // define sorting order
         const sortOptions = {};
         if(sortByPrice === "low"){
-            sortOptions.coursePrice = 1;//sort by price in ascending
+            sortOptions.coursePrice = 1;
         }else if(sortByPrice === "high"){
-            sortOptions.coursePrice = -1; // descending
+            sortOptions.coursePrice = -1; 
         }
 
         let courses = await Course.find(searchCriteria).populate({path:"creator", select:"name photoUrl"}).sort(sortOptions);
@@ -125,9 +122,9 @@ export const editCourse = async (req,res) => {
         if(thumbnail){
             if(course.courseThumbnail){
                 const publicId = course.courseThumbnail.split("/").pop().split(".")[0];
-                await deleteMediaFromCloudinary(publicId); // delete old image
+                await deleteMediaFromCloudinary(publicId); 
             }
-            // upload a thumbnail on clourdinary
+        
             courseThumbnail = await uploadMedia(thumbnail.path);
         }
 
@@ -181,7 +178,7 @@ export const createLecture = async (req,res) => {
             })
         };
 
-        // create lecture
+        
         const lecture = await Lecture.create({lectureTitle});
 
         const course = await Course.findById(courseId);
@@ -234,7 +231,7 @@ export const editLecture = async (req,res) => {
             })
         }
 
-        // update lecture
+    
         if(lectureTitle) lecture.lectureTitle = lectureTitle;
         if(videoInfo?.videoUrl) lecture.videoUrl = videoInfo.videoUrl;
         if(videoInfo?.publicId) lecture.publicId = videoInfo.publicId;
@@ -242,7 +239,6 @@ export const editLecture = async (req,res) => {
 
         await lecture.save();
 
-        // Ensure the course still has the lecture id if it was not aleardy added;
         const course = await Course.findById(courseId);
         if(course && !course.lectures.includes(lecture._id)){
             course.lectures.push(lecture._id);
@@ -268,15 +264,13 @@ export const removeLecture = async (req,res) => {
                 message:"Lecture not found!"
             });
         }
-        // delete the lecture from couldinary as well
         if(lecture.publicId){
             await deleteVideoFromCloudinary(lecture.publicId);
         }
 
-        // Remove the lecture reference from the associated course
         await Course.updateOne(
-            {lectures:lectureId}, // find the course that contains the lecture
-            {$pull:{lectures:lectureId}} // Remove the lectures id from the lectures array
+            {lectures:lectureId}, 
+            {$pull:{lectures:lectureId}} 
         );
 
         return res.status(200).json({
@@ -310,19 +304,17 @@ export const getLectureById = async (req,res) => {
 }
 
 
-// publich unpublish course logic
 
 export const togglePublishCourse = async (req,res) => {
     try {
         const {courseId} = req.params;
-        const {publish} = req.query; // true, false
+        const {publish} = req.query; 
         const course = await Course.findById(courseId);
         if(!course){
             return res.status(404).json({
                 message:"Course not found!"
             });
         }
-        // publish status based on the query paramter
         course.isPublished = publish === "true";
         await course.save();
 
